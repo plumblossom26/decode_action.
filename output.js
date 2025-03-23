@@ -1,92 +1,206 @@
-//Sun Mar 23 2025 09:44:48 GMT+0000 (Coordinated Universal Time)
+//Sun Mar 23 2025 09:59:17 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-var encode_version = "jsjiami.com.v5";
-var _0x221274 = $response.body;
-var _0x33046a = $request.url;
-const _0x4f0bca = "/api/playlet/";
-const _0x385f4e = "/api/user/info";
-if (typeof _0x221274 === "string") {
-  if (_0x33046a.indexOf(_0x4f0bca) !== -1) {
-    _0x221274 = _0x221274.replace(/"is_watch":false/g, "\"is_watch\":true,");
-  }
-  var _0x42c3a9;
+const $ = new Env("carrot");
+(() => {
+  var g = "one_first_run";
+  var h = $.getdata(g);
+  h || ($.msg($.name, "", "欢迎使用脚本！点此通知加入作者频道", "https://t.me/Jsforbaby"), $.setdata("true", g));
+  var j = $response.body;
   try {
-    _0x42c3a9 = JSON.parse(_0x221274);
-    if (_0x33046a.indexOf(_0x385f4e) !== -1) {
-      _0x42c3a9.data.username = "https://t.me/GieGie777";
-      _0x42c3a9.data.vip.status = true;
-      _0x42c3a9.data.vip.expired_date = "2999-09-09";
-      _0x42c3a9.data.vip.expired_at = 99999999999999;
-      _0x42c3a9.data.login_way = true;
-      _0x42c3a9.data.beans = 999880;
-      _0x221274 = JSON.stringify(_0x42c3a9);
-    }
-  } catch (_0x53e0fc) {
-    console.log("JSON 解析错误: " + _0x53e0fc.message);
-  }
-}
-$done({
-  body: _0x221274
-});
-(function (_0xbdc88e, _0x5af336, _0x154d5a) {
-  var _0x5dd3e8 = function () {
     {
-      var _0x3573f2 = true;
-      return function (_0x402cc1, _0x3fbabb) {
+      var k = JSON.parse(j);
+      if (k.result && k.result.subscriptions && k.result.subscriptions.length > 0) {
         {
-          var _0x2bf5fc = _0x3573f2 ? function () {
-            if (_0x3fbabb) {
-              var _0x3458bd = _0x3fbabb.apply(_0x402cc1, arguments);
-              _0x3fbabb = null;
-              return _0x3458bd;
-            }
-          } : function () {};
-          _0x3573f2 = false;
-          return _0x2bf5fc;
+          var l = k.result.subscriptions[0];
+          l.productId = "com.grailr.carrotWeather.premiumFamily1year";
+          var m = Date.now();
+          l.purchaseTime = m;
+          l.originalPurchaseTime = m;
+          l.expirationTime = m + 31536000000;
+          l.isTrialPeriod = null;
+          k.result.serverDate && k.result.serverDate.iso && (k.result.serverDate.iso = new Date().toISOString());
+          l.lastNotificationDate && l.lastNotificationDate.iso && (l.lastNotificationDate.iso = new Date().toISOString());
         }
+      }
+      $.done({
+        body: JSON.stringify(k)
+      });
+    }
+  } catch (q) {
+    {
+      var n = {
+        body: j
+      };
+      $.done(n);
+    }
+  }
+})();
+function Env(name) {
+  return new class {
+    constructor(name) {
+      this.name = name;
+      this.startTime = new Date().getTime();
+      this.log("", `🔔${this.name},开始!`);
+      this.envs = {
+        Surge: "Surge",
+        Loon: "Loon",
+        Stash: "Stash",
+        QuantumultX: "Quantumult X",
+        Shadowrocket: "Shadowrocket",
+        Nodejs: "Node.js"
       };
     }
-  }();
-  var _0x3e31dc = _0x5dd3e8(this, function () {
-    {
-      var _0x25f447 = function () {};
-      var _0x1966dd = typeof window !== "undefined" ? window : typeof process === "object" && typeof require === "function" && typeof global === "object" ? global : this;
-      if (!_0x1966dd.console) {
-        _0x1966dd.console = function (_0x2866e7) {
-          var _0x154d5a = {};
-          _0x154d5a.log = _0x2866e7;
-          _0x154d5a.warn = _0x2866e7;
-          _0x154d5a.debug = _0x2866e7;
-          _0x154d5a.info = _0x2866e7;
-          _0x154d5a.error = _0x2866e7;
-          _0x154d5a.exception = _0x2866e7;
-          _0x154d5a.trace = _0x2866e7;
-          return _0x154d5a;
-        }(_0x25f447);
-      } else {
-        _0x1966dd.console.log = _0x25f447;
-        _0x1966dd.console.warn = _0x25f447;
-        _0x1966dd.console.debug = _0x25f447;
-        _0x1966dd.console.info = _0x25f447;
-        _0x1966dd.console.error = _0x25f447;
-        _0x1966dd.console.exception = _0x25f447;
-        _0x1966dd.console.trace = _0x25f447;
+    getEnv() {
+      if ("undefined" !== typeof $environment && $environment["surge-version"]) {
+        return "Surge";
+      }
+      if ("undefined" !== typeof $environment && $environment["stash-version"]) {
+        return "Stash";
+      }
+      if ("undefined" !== typeof module && !!module.exports) {
+        return "Node.js";
+      }
+      if ("undefined" !== typeof $task) {
+        return "Quantumult X";
+      }
+      if ("undefined" !== typeof $loon) {
+        return "Loon";
+      }
+      if ("undefined" !== typeof $rocket) {
+        return "Shadowrocket";
       }
     }
-  });
-  _0x3e31dc();
-  _0x154d5a = "al";
-  try {
-    {
-      _0x154d5a += "ert";
-      _0x5af336 = encode_version;
-      if (!(typeof _0x5af336 !== "undefined" && _0x5af336 === "jsjiami.com.v5")) {
-        _0xbdc88e[_0x154d5a]("删除版本号，js会定期弹窗，还请支持我们的工作");
+    isNode() {
+      return "Node.js" === this.getEnv();
+    }
+    isQuanX() {
+      return "Quantumult X" === this.getEnv();
+    }
+    isSurge() {
+      return "Surge" === this.getEnv();
+    }
+    isLoon() {
+      return "Loon" === this.getEnv();
+    }
+    isShadowrocket() {
+      return "Shadowrocket" === this.getEnv();
+    }
+    isStash() {
+      return "Stash" === this.getEnv();
+    }
+    getdata(key) {
+      switch (this.getEnv()) {
+        case "Surge":
+        case "Loon":
+        case "Stash":
+        case "Shadowrocket":
+          return $persistentStore.read(key);
+        case "Quantumult X":
+          return $prefs.valueForKey(key);
+        case "Node.js":
+          this.data = this.data || {};
+          return this.data[key];
+        default:
+          return null;
       }
     }
-  } catch (_0x1ca28d) {
-    _0xbdc88e[_0x154d5a]("删除版本号，js会定期弹窗");
-  }
-})(window);
-encode_version = "jsjiami.com.v5";
+    setdata(val, key) {
+      switch (this.getEnv()) {
+        case "Surge":
+        case "Loon":
+        case "Stash":
+        case "Shadowrocket":
+          return $persistentStore.write(val, key);
+        case "Quantumult X":
+          return $prefs.setValueForKey(val, key);
+        case "Node.js":
+          this.data = this.data || {};
+          this.data[key] = val;
+          return true;
+        default:
+          return false;
+      }
+    }
+    msg(title = this.name, subt = "", desc = "", opts = {}) {
+      const toEnvOpts = rawopts => {
+        if (typeof rawopts === "string") {
+          switch (this.getEnv()) {
+            case "Surge":
+            case "Stash":
+            default:
+              return {
+                url: rawopts
+              };
+            case "Loon":
+            case "Shadowrocket":
+              return rawopts;
+            case "Quantumult X":
+              return {
+                "open-url": rawopts
+              };
+            case "Node.js":
+              return undefined;
+          }
+        } else {
+          if (typeof rawopts === "object") {
+            const openUrl = rawopts.openUrl || rawopts.url || rawopts["open-url"];
+            switch (this.getEnv()) {
+              case "Surge":
+              case "Stash":
+              case "Shadowrocket":
+                return openUrl ? {
+                  url: openUrl
+                } : {};
+              case "Loon":
+                return openUrl ? {
+                  openUrl
+                } : {};
+              case "Quantumult X":
+                return openUrl ? {
+                  "open-url": openUrl
+                } : {};
+              case "Node.js":
+                return undefined;
+            }
+          }
+        }
+        return undefined;
+      };
+      switch (this.getEnv()) {
+        case "Surge":
+        case "Loon":
+        case "Stash":
+        case "Shadowrocket":
+          $notification.post(title, subt, desc, toEnvOpts(opts));
+          break;
+        case "Quantumult X":
+          $notify(title, subt, desc, toEnvOpts(opts));
+          break;
+        case "Node.js":
+          console.log(`${title}\n${subt}\n${desc}`);
+          break;
+      }
+    }
+    log(...logs) {
+      console.log(logs.join("\n"));
+    }
+    done(val = {}) {
+      const endTime = new Date().getTime();
+      const costTime = (endTime - this.startTime) / 1000;
+      this.log("", `🔔${this.name},结束!🕛${costTime}秒`);
+      switch (this.getEnv()) {
+        case "Surge":
+        case "Loon":
+        case "Stash":
+        case "Shadowrocket":
+        case "Quantumult X":
+          $done(val);
+          break;
+        case "Node.js":
+          process.exit(1);
+          break;
+      }
+    }
+  }(name);
+}
